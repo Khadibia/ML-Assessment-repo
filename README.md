@@ -111,9 +111,9 @@ Augmentations:
 
 # Instructions on how to setup and run the model
 1. pip install -r requirements.txt
-2. Prepare test image and place model in same folder as pred script. The script will load the model, run inference on the specified image, and print the results.
+2. prepare test image and place model in same folder as pred script. The script will load the model, run inference on the specified image, and print the results.
 3. run predictions using pred script.py
-4. Check results. Annotated images show detected objects with class IDs, confidence scores, and bounding box coordinates.
+4. check results. Annotated images show detected objects with class IDs, confidence scores, and bounding box coordinates.
 
 # Final Model Performance Metrics
 | Class  | Images | Instances | P     | R     | mAP50 | mAP50-95 |
