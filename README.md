@@ -10,6 +10,8 @@ The trained model uses **YOLOv5** for object detection.
 
 As instructed, i curated this dataset by taking photos of household items, which i annotated on makesense.ai(https://www.makesense.ai).
 
+The link to my train and val images; https://drive.google.com/drive/folders/1s7FreXGXTYwi6rfqFfmVlQl64BaP-szg?usp=sharing
+
 I proceeded to organing the data in YOLOv5 structure as follows:
   dataset/
     images/train/
