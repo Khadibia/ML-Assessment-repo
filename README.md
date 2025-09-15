@@ -1,4 +1,4 @@
-# Object Detection with YOLOv5
+# Object Detection with YOLOv5 Assessment
 
 ## Project Overview
 This project focuses on detecting **four object classes** using a custom dataset:
