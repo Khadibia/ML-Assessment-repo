@@ -12,7 +12,7 @@ As instructed, i curated this dataset by taking photos of household items, which
 
 As permitted, here's the link to my train and val images; https://drive.google.com/drive/folders/1s7FreXGXTYwi6rfqFfmVlQl64BaP-szg?usp=sharing
 
-I proceeded to organing the data in YOLOv5 structure as follows:
+I proceeded to organising the data in YOLOv5 structure as follows:
   dataset/
     images/train/
     images/val/
@@ -21,7 +21,7 @@ I proceeded to organing the data in YOLOv5 structure as follows:
     
 ensuring all images have their corresponding annotations in the label folder.
 
-I created a dataset config file with the directory to the traina and validation images along with the corresponding labels for each class, which has the following:
+I created a dataset config file with the directory to the train and validation images along with the corresponding labels for each class, which has the following:
 
   train: assessment/images/train
   val: assessment/images/val
@@ -29,9 +29,9 @@ I created a dataset config file with the directory to the traina and validation 
   nc: 4
   names: ['chair', 'remote', 'table', 'tv']
 
-Back to the dataset, i parsed the annotations, extracting the class labels and bounding box details and formatting as a list, with the bounding box details in a list within this list. This is so i can examine and confirm the labels correpond to each image.
+Back to the dataset, i parsed the annotations, extracting the class labels and bounding box details and formatting as a list, with the bounding box details in a list within this list. This is so i can examine and confirm the labels correspond to each image.
 
-The final folder sructure was;
+The final folder structure was;
 ├── dataset/
 │ ├── images/
 │ │ ├── train/
@@ -46,7 +46,7 @@ The final folder sructure was;
 ├── augments.yaml -> augmentation file
 └── README.md -> project documentation
 
-After the review and confirmation of the correspondence images and annotations, the next before training was the application of overfitting techniques. For the size of this dataset (234 images for both train and validation), overfitting is not far away. So i opted for three techniques to comabat it; Early Stopping, Data Augumentation and lowering Learning Rate. Ultralytics built the `Patience` command for early stopping. For the learning rate, i added it as part of the augmentations. Turned out if i had to tweak the hyper parameters, i had to tweak them all, which was now;
+After the review and confirmation of the correspondence images and annotations, the next before training was the application of overfitting techniques. For the size of this dataset (234 images for both train and validation), overfitting is not far away. So i opted for three techniques to combat it; Early Stopping, Data Augmentation and lowering Learning Rate. Ultralytics built the `Patience` command for early stopping. For the learning rate, i added it as part of the augmentations. Turned out if i had to tweak the hyper parameters, i had to tweak them all, which was now;
 
 # Hyperparameters
 * lr0: 0.01
@@ -134,11 +134,11 @@ The biggest challenge I faced during this project was the curation and manual an
 Despite these challenges, I was able to successfully train the model and verify its performance, including additional tests in the notebook, all of which produced accurate predictions.
 
 # Instructions on how to setup and run the model
-1. pip install -r requirements.txt. I created this requirement.txt file for ease of installation of required packages
+1. pip install -r requirements.txt. I created this requirements.txt file for ease of installation of required packages
 2. prepare test image and place model in same folder as pred script. The script will load the model, run inference on the specified image, and print the results.
 3. run predictions using pred.py. The script required of me to create as part of the assessment.
 4. check results. Annotated images show detected objects with class IDs, confidence scores, and bounding box coordinates.
 
-Downsides of this script is the image path being hardcoded. For each test, the image path has to be changed. Better option is the python predict.py --source /path/to/image.jpg argument, as i did un the notbook when training the model. But then, an interface with a file picker changes everything astronomically.
+Downsides of this script are the image path being hardcoded. For each test, the image path has to be changed. A better option is the python predict.py --source /path/to/image.jpg argument, as i did in the notebook when training the model. But then, an interface with a file picker changes everything dramatically.
 
 
