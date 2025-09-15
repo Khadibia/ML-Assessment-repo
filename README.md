@@ -109,8 +109,13 @@ Augmentations:
 * mixup: probability of blending 2 images
 * copy\_paste: probability of pasting objects from other images
 
+# Instructions on how to setup and run the model
+1. pip install -r requirements.txt
+2. Prepare test image and place model in same folder as pred script. The script will load the model, run inference on the specified image, and print the results.
+3. run predictions using pred script.py
+4. Check results. Annotated images show detected objects with class IDs, confidence scores, and bounding box coordinates.
 
-# Model Metrics
+# Final Model Performance Metrics
 | Class  | Images | Instances | P     | R     | mAP50 | mAP50-95 |
 | ------ | ------ | --------- | ----- | ----- | ----- | -------- |
 | all    | 31     | 31        | 0.788 | 0.846 | 0.879 | 0.682    |
@@ -119,19 +124,3 @@ Augmentations:
 | table  | 31     | 6         | 0.504 | 0.500 | 0.580 | 0.438    |
 | tv     | 31     | 6         | 0.899 | 1.000 | 0.995 | 0.699    |
 
-Precision and recall metrics for the table class were low, also the mAP50 and mAP50-95 low too. I tweaked the hyperparameters i inisially trained with. The changes made were
-* degrees: 20
-* translate: 0.3
-* scale: 0.6
-* shear: 0.3
-* perspective: 0.1
-* mosaic: 1.0
-* mixup: 0.7
-
-The new metrics were;
-| Metric        | Value |
-| ------------- | ----- |
-| Precision     | 0.88  |
-| Recall        | 0.85  |
-| mAP\@0.5      | 0.87  |
-| mAP\@0.5:0.95 | 0.72  |
