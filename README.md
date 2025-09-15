@@ -42,7 +42,7 @@ The final folder structure was;
 ├── notebook.ipynb -> notebook where i fine-tuned the model
 ├── pred.py -> prediction script
 ├── data.yaml -> config file
-├── best.pt -> final weights
+├── best.pt -> final trained weights
 ├── augments.yaml -> augmentation file
 └── README.md -> project documentation
 
