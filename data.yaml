@@ -1,0 +1,5 @@
+train: /content/drive/MyDrive/assessment/images/train
+val: /content/drive/MyDrive/assessment/images/val
+
+nc: 4
+names: ['table', 'chair', 'tv', 'remote']
