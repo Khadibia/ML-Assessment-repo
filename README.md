@@ -121,9 +121,9 @@ Augmentations:
 | table  | 31     | 6         | 0.504 | 0.500 | 0.580 | 0.438    |
 | tv     | 31     | 6         | 0.899 | 1.000 | 0.995 | 0.699    |
 
-The final YOLOv5 model was tested on a validation set of 31 images covering four object classes: chair, remote, table, and tv. Overall, the model performed well, achieving an mAP50 of 0.879 and an mAP50-95 of 0.682.
+The final YOLOv5 model was tested on my validation set of 31 images covering all four object classes. Overall, the model performed well, achieving an mAP50 of 0.879 and an mAP50-95 of 0.682.
 
-Breaking it down by class, chair, remote, and tv were detected with high precision and recall, showing the model reliably recognises these objects. The table class performed noticeably worse, with both precision and recall around 0.5, likely due to fewer examples and more variation in appearance. More data across all classes would result in higher metrics.
+Breaking it down by class, chair, remote, and tv were detected with high precision and recall, showing the model performed well in recognising these objects. The table class performed noticeably lower, with both precision and recall around 0.5, likely due to fewer examples and more variation in appearance. More data across all classes would result in higher metrics.
 
 I also ran additional tests directly in the notebook using new images, and the predictions were all accurate, confirming the model’s practical effectiveness.
 
