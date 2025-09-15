@@ -95,21 +95,27 @@ Augmentations:
 
 
 # Model Metrics
-Model summary: 157 layers, 7020913 parameters, 0 gradients, 15.8 GFLOPs
-                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100% 2/2 [00:00<00:00,  2.45it/s]
-                   all         31         31      0.788      0.846      0.879      0.682
-                 chair         31         12      0.841      0.883      0.945      0.801
-                remote         31          7       0.91          1      0.995      0.788
-                 table         31          6      0.504        0.5       0.58      0.438
-                    tv         31          6      0.899          1      0.995      0.699
+| Class  | Images | Instances | P     | R     | mAP50 | mAP50-95 |
+| ------ | ------ | --------- | ----- | ----- | ----- | -------- |
+| all    | 31     | 31        | 0.788 | 0.846 | 0.879 | 0.682    |
+| chair  | 31     | 12        | 0.841 | 0.883 | 0.945 | 0.801    |
+| remote | 31     | 7         | 0.910 | 1.000 | 0.995 | 0.788    |
+| table  | 31     | 6         | 0.504 | 0.500 | 0.580 | 0.438    |
+| tv     | 31     | 6         | 0.899 | 1.000 | 0.995 | 0.699    |
 
 Precision and recall metrics for the table class were low, also the mAP50 and mAP50-95 low too. I tweaked the hyperparameters i inisially trained with. The changes made were
--degrees: 20
--translate: 0.3
--scale: 0.6
--shear: 0.3
--perspective: 0.1
--mosaic: 1.0
--mixup: 0.7
+* **degrees:** 20
+* **translate:** 0.3
+* **scale:** 0.6
+* **shear:** 0.3
+* **perspective:** 0.1
+* **mosaic:** 1.0
+* **mixup:** 0.7
 
 The new metrics were;
+| Metric        | Value |
+| ------------- | ----- |
+| Precision     | 0.88  |
+| Recall        | 0.85  |
+| mAP\@0.5      | 0.87  |
+| mAP\@0.5:0.95 | 0.72  |
