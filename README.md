@@ -10,7 +10,7 @@ The trained model uses **YOLOv5** for object detection.
 
 As instructed, i curated this dataset by taking photos of household items, which i annotated on makesense.ai(https://www.makesense.ai).
 
-The link to my train and val images; https://drive.google.com/drive/folders/1s7FreXGXTYwi6rfqFfmVlQl64BaP-szg?usp=sharing
+As permitted, here's the link to my train and val images; https://drive.google.com/drive/folders/1s7FreXGXTYwi6rfqFfmVlQl64BaP-szg?usp=sharing
 
 I proceeded to organing the data in YOLOv5 structure as follows:
   dataset/
@@ -123,7 +123,7 @@ Augmentations:
 
 The final YOLOv5 model was tested on a validation set of 31 images covering four object classes: chair, remote, table, and tv. Overall, the model performed well, achieving an mAP50 of 0.879 and an mAP50-95 of 0.682.
 
-Breaking it down by class, chair, remote, and tv were detected with high precision and recall, showing the model reliably recognises these objects. The table class performed noticeably worse, with both precision and recall around 0.5, likely due to fewer examples and more variation in appearance.
+Breaking it down by class, chair, remote, and tv were detected with high precision and recall, showing the model reliably recognises these objects. The table class performed noticeably worse, with both precision and recall around 0.5, likely due to fewer examples and more variation in appearance. More data across all classes would result in higher metrics.
 
 I also ran additional tests directly in the notebook using new images, and the predictions were all accurate, confirming the model’s practical effectiveness.
 
@@ -134,9 +134,9 @@ The biggest challenge I faced during this project was the curation and manual an
 Despite these challenges, I was able to successfully train the model and verify its performance, including additional tests in the notebook, all of which produced accurate predictions.
 
 # Instructions on how to setup and run the model
-1. pip install -r requirements.txt
+1. pip install -r requirements.txt. I created this requirement.txt file for ease of installation of required packages
 2. prepare test image and place model in same folder as pred script. The script will load the model, run inference on the specified image, and print the results.
-3. run predictions using pred.py
+3. run predictions using pred.py. The script required of me to create as part of the assessment.
 4. check results. Annotated images show detected objects with class IDs, confidence scores, and bounding box coordinates.
 
 Downsides of this script is the image path being hardcoded. For each test, the image path has to be changed. Better option is the python predict.py --source /path/to/image.jpg argument, as i did un the notbook when training the model. But then, an interface with a file picker changes everything astronomically.
