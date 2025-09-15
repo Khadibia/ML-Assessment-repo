@@ -39,8 +39,11 @@ The final folder sructure was;
 │ ├── labels/
 │ │ ├── train/
 │ │ └── val/
+├── notebook.ipynb -> notebook where i fine-tuned the model
+├── pred.py -> prediction script
 ├── data.yaml -> config file
 ├── best.pt -> final weights
+├── augments.yaml -> augmentation file
 └── README.md -> project documentation
 
 After the review and confirmation of the correspondence images and annotations, the next before training was the application of overfitting techniques. For the size of this dataset (234 images for both train and validation), overfitting is not far away. So i opted for three techniques to comabat it; Early Stopping, Data Augumentation and lowering Learning Rate. Ultralytics built the `Patience` command for early stopping. For the learning rate, i added it as part of the augmentations. Turned out if i had to tweak the hyper parameters, i had to tweak them all, which was now;
@@ -112,7 +115,7 @@ Augmentations:
 # Instructions on how to setup and run the model
 1. pip install -r requirements.txt
 2. prepare test image and place model in same folder as pred script. The script will load the model, run inference on the specified image, and print the results.
-3. run predictions using pred script.py
+3. run predictions using pred.py
 4. check results. Annotated images show detected objects with class IDs, confidence scores, and bounding box coordinates.
 
 # Final Model Performance Metrics
